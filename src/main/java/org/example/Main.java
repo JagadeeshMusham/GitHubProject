@@ -15,9 +15,10 @@ public class Main {
         }
 
         int counter = 100;
-        while(counter--) {
+        while(counter > 0) {
             System.out.println("Counter: " + counter);
-            Thread.sleep(1000);
+            Thread.sleep(100);
+            counter--;
         }
     }
 }
