@@ -17,7 +17,12 @@ public class Main {
         int counter = 100;
         while(counter > 0) {
             System.out.println("Counter: " + counter);
-            Thread.sleep(100);
+             try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                // Handle exception
+                System.out.println("Thread was interrupted!");
+            }
             counter--;
         }
     }
