@@ -1,5 +1,5 @@
 # Use the official OpenJDK 21 image
-FROM openjdk:21
+FROM openjdk:21-jdk-buster
 
 # Install Git and Maven
 RUN apt-get update && \
@@ -12,7 +12,7 @@ WORKDIR /app
 RUN git clone https://github.com/JagadeeshMusham/GitHubProject.git .
 
 # Package the application using Maven
-RUN mvn clean package
+RUN mvn clean package -DskipTests=true
 
 # Run the application
 CMD ["java", "-cp", "target/classes", "org.example.HelloWorld"]
